@@ -5,6 +5,7 @@ public class UserCardData {
 	private String cardType;
 	private String number;
 	private String expiryDate;
+	private int cvcHash;
 	
 	
 	public String getHolderName() {
@@ -31,5 +32,15 @@ public class UserCardData {
 	public void setExpiryDate(String expiryDate) {
 		this.expiryDate = expiryDate;
 	}
+	public int getCvcHash() {
+		return cvcHash;
+	}
+	public void setCvc(String cvc) {
+		this.cvcHash = cvc.hashCode();
+	}
+	public boolean checkCvc(String cvc) {
+		return this.cvcHash == cvc.hashCode();
+	}
+	
 	
 }

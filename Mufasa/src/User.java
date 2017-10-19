@@ -10,8 +10,16 @@ public class User {
 	private String phoneNumber;
 	private String emailAddress;
 	
+	private UserBankingRequirements bankingData;
+	
 	public User(String firstName, String lastName, String userName, int password, String country, String dob,
 			String phoneNumber, String email) {
+		this(firstName, lastName, userName, password, country, dob, phoneNumber, email, null);
+	}
+	
+	public User(String firstName, String lastName, String userName, int password, String country, String dob,
+			String phoneNumber, String email, UserBankingRequirements bankingData) {
+		
 		this.firstName = firstName;
 		this.lastName  = lastName;
 		this.userName  = userName;
@@ -20,6 +28,8 @@ public class User {
 		this.dob = dob;
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = email;
+		this.bankingData = bankingData;
+		
 	}
 	
 	
@@ -110,6 +120,16 @@ public class User {
 	
 
 	
+	public UserBankingRequirements getBankingData() {
+		return bankingData;
+	}
+
+	public void setBankingData(UserBankingRequirements bankingData) {
+		this.bankingData = bankingData;
+	}
+
+
+
 	public boolean checkPassword(String password) {
 		return this.passwordHash == password.hashCode();
 	}

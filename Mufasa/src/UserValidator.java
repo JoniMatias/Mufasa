@@ -2,6 +2,12 @@
 public class UserValidator {
 	
 	public boolean isUserValid(User user) {
+		if (!isNameValid(user.getFirstName())) return false;
+		if (!isNameValid(user.getLastName()))  return false;
+		if (!isUserNameValid(user))            return false;
+		if (!isCountryValid(user))             return false;
+		if (!isPhoneNumberValid(user))         return false;
+		
 		return true;
 	}
 	

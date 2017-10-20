@@ -1,21 +1,8 @@
 
-public class CaptchaChecker {
-
-	private int refreshCount;
+public interface CaptchaChecker {
 	
-	public CaptchaChecker() {
-		refreshCount = 0;
-	}
+	public boolean changeCaptcha();
 	
-	public boolean changeCaptcha() {
-		//mock
-		refreshCount++;
-		return refreshCount <= 4;
-	}
-	
-	public boolean doesCaptchaMatch(String input) {
-		//stub
-		return true;
-	}
+	public boolean doesCaptchaMatch(String input);
 	
 }

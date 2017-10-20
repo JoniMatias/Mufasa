@@ -1,28 +1,17 @@
 
 public class UserBankingRequirements {
 
-	private int passwordHash;
-	private String streetAddress;
+	private Address address;
 	private UserCardData card;
 	
 	
 	
-	public int getPasswordHash() {
-		return passwordHash;
+	public Address getAddress() {
+		return address;
 	}
-	public void setPasswordHash(int passwordHash) {
-		this.passwordHash = passwordHash;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-	
-	
-	
-	public String getStreetAddress() {
-		return streetAddress;
-	}
-	public void setStreetAddress(String streetAddress) {
-		this.streetAddress = streetAddress;
-	}
-	
 	
 	
 	public UserCardData getCard() {

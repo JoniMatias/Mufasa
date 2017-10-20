@@ -1,9 +1,6 @@
 
-public class CountryCodeList {
+public interface CountryCodeList {
 
-	public boolean isCountryCodeValid(String country) {
-		//stub 
-		return true;
-	}
+	public boolean isCountryCodeValid(String country);
 	
 }

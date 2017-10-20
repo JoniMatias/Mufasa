@@ -1,10 +1,19 @@
 
-public interface BankAccount {
+public class BankAccount {
 	
+	private int balance;
+	public boolean hasBeenTested;
 	
-	public int getBalance();
+	BankAccount(int balance) {
+		this.balance = balance;
+	}
 	
-	public void testTransaction();
-	public void refundTestTransaction();
+	public int getBalance() {
+		return balance;
+	}
+	
+	public void transaction(int change) {
+		balance += change;
+	}
 	
 }

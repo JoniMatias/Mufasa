@@ -4,7 +4,6 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String userName;
-	private int passwordHash;
 	private String countryCode;
 	private String dob;
 	private String phoneNumber;
@@ -12,18 +11,17 @@ public class User {
 	
 	private UserBankingRequirements bankingData;
 	
-	public User(String firstName, String lastName, String userName, int password, String country, String dob,
+	public User(String firstName, String lastName, String userName, String country, String dob,
 			String phoneNumber, String email) {
-		this(firstName, lastName, userName, password, country, dob, phoneNumber, email, null);
+		this(firstName, lastName, userName, country, dob, phoneNumber, email, null);
 	}
 	
-	public User(String firstName, String lastName, String userName, int password, String country, String dob,
+	public User(String firstName, String lastName, String userName, String country, String dob,
 			String phoneNumber, String email, UserBankingRequirements bankingData) {
 		
 		this.firstName = firstName;
 		this.lastName  = lastName;
 		this.userName  = userName;
-		this.passwordHash = password;
 		this.countryCode = country;
 		this.dob = dob;
 		this.phoneNumber = phoneNumber;
@@ -64,19 +62,6 @@ public class User {
 		this.userName = userName;
 	}
 	
-	
-	
-	public int getPasswordHash() {
-		return passwordHash;
-	}
-	
-	public void setPasswordHash(int hash) {
-		this.passwordHash = hash;
-	}
-	
-	public void setPassword(String password) {
-		this.passwordHash = password.hashCode();
-	}
 	
 	
 	
@@ -128,11 +113,6 @@ public class User {
 		this.bankingData = bankingData;
 	}
 
-
-
-	public boolean checkPassword(String password) {
-		return this.passwordHash == password.hashCode();
-	}
 	
 	
 }
